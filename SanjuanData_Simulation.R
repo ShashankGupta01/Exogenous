@@ -1,35 +1,23 @@
+#' @title Implementation of deep learning forecasting models for time series modelling
+#' @param \code{train} is a time series object for training the model
+#' @param \code{test} is a time series object for testing the model
+#' @param \code{x_reg} is a covariate time series object used for training
+#' @param n an \code{integer} value indicating the desired forecast horizons
+#' @packages required - tseries, forecast
 
 
-library(tseries)
-library(forecast)
-library(Metrics)
-library(ggplot2)
-library(WaveletArima)
-library(e1071)
-library(fracdiff)
-library(tseriesChaos)
-library(pracma)
-library(Kendall)
-library(nonlinearTseries)
-library(GeneCycle)
-library(fpp2)
-library(smooth)
-
-
-###########################################################
 var_ts=ts(data$var)
-l1=length(data$var)
+L=length(data$var)
 l= n
-train = window(var_ts, start = 1, end=l1-l)
-test = window(var_ts, start= l1-l+1,end=l1)
-
-## ARIMAX
-Case_ts=ts(train)
+train = window(var_ts, start = 1, end=L-l)
+test = window(var_ts, start= L-l+1,end=L)
 
 xreg=data$Exo_var
-xreg_Train=window(xreg, start = 1, end=l1-l)
-xreg_Test=window(xreg, start= l1-l+1, end=l1)
+xreg_Train=window(xreg, start = 1, end=L-l)
+xreg_Test=window(xreg, start= L-l+1, end=L)
 
+
+## ARIMAX
 auto.arima(train,xreg=xreg_Train)
 fitARIMAX = auto.arima(train,xreg=xreg_Train)
 summary(fitARIMAX)
