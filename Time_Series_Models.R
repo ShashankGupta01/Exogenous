@@ -53,5 +53,3 @@ pred_arimax_arnn=predARIMAX_Fit$mean+pred_res_ARNN$mean
 fitETSX = es(train, model = "ZZZ", xreg = xreg_Train)
 modelType(fitETSX)
 predETSX = forecast::forecast(fitETSX, h=l, xreg = xreg_Test)
-
-
