@@ -1,4 +1,3 @@
-
 #' @title Time Series Modeling and Forecasting with ARIMAX, NNETAR, and ETSX
 #' @description
 #' This code performs time series modeling and forecasting using various methods, including ARIMAX, NNETAR, and ETSX models.
