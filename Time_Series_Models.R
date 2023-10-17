@@ -1,8 +1,9 @@
-#' @title Implementation of deep learning forecasting models for time series modelling
-#' @param \code{train} is a time series object for training the model
+#' @title Implementation of time series models
+#' @param n an \code{integer} value indicating the desired forecast horizons
+#' @param \code{train} is a time series object for training the model 
 #' @param \code{test} is a time series object for testing the model
 #' @param \code{x_reg} is a covariate time series object used for training
-#' @param n an \code{integer} value indicating the desired forecast horizons
+
 #' @packages required - tseries, forecast
 
 
