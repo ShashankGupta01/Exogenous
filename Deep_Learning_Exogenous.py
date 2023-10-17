@@ -1,4 +1,6 @@
 #' @title Implementation of deep learning forecasting models
+#' @description
+#' This code implements deep learning forecasting models using the Darts library, including BlockRNN, NBeats, Transformers, and TCN.
 #' @param \code{train} is a time series object for training the model
 #' @param \code{x_reg} is a covariate time series object used for training
 #' @param n an \code{integer} value indicating the desired forecast horizons
