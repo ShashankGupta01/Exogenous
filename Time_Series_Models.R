@@ -33,7 +33,6 @@ xreg_Test=window(xreg, start= L-l+1, end=L)
 
 ## ARIMAX
 fitARIMAX = auto.arima(train,xreg=xreg_Train)
-
 ARIMA_Exo_var = auto.arima(xreg_Train) 
 
 predARIMA_Exo_var= forecast::forecast(ARIMA_Exo_var,h=l) 
@@ -59,6 +58,7 @@ pred_arimax_arnnx=pred_ARIMAX$mean+pred_res_ARNNX$mean
 ## ARIMAX + ARNN 
 fit_res_ARNN=nnetar(fitARIMAX$residuals, repeats = 100)
 fit_res_ARNN
+
 pred_res_ARNN = forecast::forecast(fit_res_ARNN, h=l) 
 pred_arimax_arnn=pred_ARIMAX$mean+pred_res_ARNN$mean
 
@@ -66,4 +66,5 @@ pred_arimax_arnn=pred_ARIMAX$mean+pred_res_ARNN$mean
 ##ETSX
 fitETSX = es(train, model = "ZZZ", xreg = xreg_Train)
 modelType(fitETSX)
+
 pred_ETSX = forecast::forecast(fitETSX, h=l, xreg = xreg_Test)
