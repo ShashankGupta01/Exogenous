@@ -1,9 +1,22 @@
-#' @title Implementation of time series models
-#' @param n an \code{integer} value indicating the desired forecast horizons
-#' @param \code{train} is a time series object for training the model 
-#' @param \code{test} is a time series object for testing the model
-#' @param \code{x_reg} is a covariate time series object used for training
 
+#' @title Time Series Modeling and Forecasting with ARIMAX, NNETAR, and ETSX
+#' @description
+#' This code performs time series modeling and forecasting using various methods, including ARIMAX, NNETAR, and ETSX models.
+#' @param n - An integer value indicating the desired forecast horizons (positive integer).
+#' @param train - A time series object for training the model.
+#' @param test - A time series object for testing the model.
+#' @param x_reg - A covariate time series object used for training.
+#' @section ARIMAX: ARIMA with Exogenous Variables
+#' The ARIMAX section of the code fits an ARIMA model with exogenous variables.
+#' It uses the auto.arima function to automatically select the ARIMA model order.
+#' @section NNETAR: Neural Network Time Series Forecasting
+#' The NNETAR section utilizes the nnetar function to perform time series forecasting using neural networks.
+#' @section ARIMAX + NNETAR
+#' This section combines ARIMAX and NNETAR models for forecasting.
+#' @section ARIMAX + ARNN
+#' Here, ARIMAX and ARNN models are combined for forecasting.
+#' @section ETSX: Exponential Smoothing with Exogenous Variables
+#' The ETSX section applies Exponential Smoothing with exogenous variables using the es function.
 #' @packages required - tseries, forecast
 
 
