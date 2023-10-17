@@ -17,11 +17,11 @@ library(smooth)
 
 
 ###########################################################
-cases_ts=ts(data$Cases)
-l1=length(data$Cases)
+var_ts=ts(data$var)
+l1=length(data$var)
 l= n
-train = window(cases_ts, start = 1, end=l1-l)
-test = window(cases_ts, start= l1-l+1,end=l1)
+train = window(var_ts, start = 1, end=l1-l)
+test = window(var_ts, start= l1-l+1,end=l1)
 
 ## ARIMAX
 Case_ts=ts(train)
